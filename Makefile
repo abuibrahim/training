@@ -2,11 +2,12 @@ HOST    ?= ftp.eng.viptela.com
 RELEASE ?= next
 BUILD   ?= LATEST
 MACHINE ?= genericx86-64
-IMAGES   = vedge.qcow2 vsmart.qcow2
+IMAGES   = vedge.qcow2 vsmart.qcow2 vmanage.qcow2
 CONFS   := $(wildcard *.conf)
 VEDGES  := $(wildcard ve*.conf)
 VSMARTS := $(wildcard vs*.conf)
 VBONDS  := $(wildcard vb*.conf)
+VMANAGES:= $(wildcard vm*.conf)
 ISOS    := $(CONFS:.conf=.iso)
 CRTS    := $(CONFS:.conf=.crt)
 CSRS    := $(CONFS:.conf=.csr)
@@ -35,6 +36,9 @@ vedge.qcow2:
 vsmart.qcow2:
 	@wget ftp://$(HOST)/builds/bamboo/$(RELEASE)/$(BUILD)/viptela-smart-$(MACHINE).qcow2 -O $@
 
+vmanage.qcow2:
+	@wget ftp://$(HOST)/builds/bamboo/nms/$(RELEASE)/$(BUILD)/viptela-vmanage-$(MACHINE).qcow2 -O $@
+
 ca.crt ca.key:
 	@openssl req -new -x509 -nodes -keyout ca.key -out ca.crt -subj "$(SUBJECT)/CN=ca" 2>/dev/null
 
@@ -50,12 +54,14 @@ ca.crt ca.key:
 
 $(VBONDS:.conf=.iso): vsmart_serial_numbers vedge_serial_numbers
 
+$(VMANAGES:.conf=.iso): vsmart_serial_numbers vedge_serial_numbers
+
 $(VSMARTS:.conf=.iso): vedge_serial_numbers
 
 %.uuid:
 	@uuidgen > $@
 
-vsmart_serial_numbers: $(VSMARTS:.conf=.srl)
+vsmart_serial_numbers: $(VSMARTS:.conf=.srl) $(VMANAGES:.conf=.srl)
 	@for s in $^; do echo "`cat $$s`,valid"; done > $@
 
 vedge_serial_numbers: $(VEDGES:.conf=.srl) $(VEDGES:.conf=.uuid)

@@ -78,7 +78,7 @@ cat >> $out/user-data <<EOF
 EOF
 
 case $host in
-    vb*|vs*)
+    vb*|vs*|vm*)
 	cat >> $out/user-data <<EOF
 
 - path: /usr/share/viptela/vedge_serial_numbers
@@ -89,7 +89,7 @@ EOF
 esac
 
 case $host in
-    vb*)
+    vb*|vm*)
 	cat >> $out/user-data <<EOF
 
 - path: /usr/share/viptela/vsmart_serial_numbers
@@ -105,6 +105,19 @@ runcmd:
   - export CONFD_IPC_ACCESS_FILE=/etc/confd/confd_ipc_secret
   - vconfd_script_upload_root_ca_crt_chain.sh path /home/root/root-ca.crt
   - vconfd_script_cert.sh path /home/root/server.crt
+EOF
+
+case $host in
+    vm*)
+	cat >> $out/user-data <<EOF
+  - mkfs.etx3 /dev/vdb
+  - mount /dev/vdb /opt/data
+  - chown vmanage:vmanage-admin /opt/data
+  - confd_cmd -o -c 'set /nms-server/running true'
+EOF
+esac
+
+cat >> $out/user-data <<EOF
   - reboot
 
 EOF
