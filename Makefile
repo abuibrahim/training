@@ -37,7 +37,7 @@ vsmart.qcow2:
 	@wget ftp://$(HOST)/builds/bamboo/$(RELEASE)/$(BUILD)/viptela-smart-$(MACHINE).qcow2 -O $@
 
 vmanage.qcow2:
-	@wget ftp://$(HOST)/builds/bamboo/nms/$(RELEASE)/$(BUILD)/viptela-vmanage-$(MACHINE).qcow2 -O $@
+	@wget ftp://$(HOST)/builds/bamboo/nms/$(RELEASE)/LATEST/viptela-vmanage-$(MACHINE).qcow2 -O $@
 
 ca.crt ca.key:
 	@openssl req -new -x509 -nodes -keyout ca.key -out ca.crt -subj "$(SUBJECT)/CN=ca" 2>/dev/null
