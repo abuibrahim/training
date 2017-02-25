@@ -24,6 +24,7 @@ Content-Type: text/cloud-boothook; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Content-Disposition: attachment; filename="cli"
 
+#cloud-boothook
 EOF
 
 cat $host.conf >> $out/user-data
