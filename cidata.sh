@@ -114,7 +114,6 @@ case $host in
   - mkfs.etx3 /dev/vdb
   - mount /dev/vdb /opt/data
   - chown vmanage:vmanage-admin /opt/data
-  - confd_cmd -o -c 'set /nms-server/running true'
 EOF
 esac
 
