@@ -1,6 +1,8 @@
 HOST    ?= ftp.eng.viptela.com
 RELEASE ?= next
 BUILD   ?= LATEST
+VMRELEASE ?= $(RELEASE)
+VMBUILD ?= $(BUILD)
 MACHINE ?= genericx86-64
 IMAGES   = vedge.qcow2 vsmart.qcow2 vmanage.qcow2
 CONFS   := $(wildcard *.conf)
@@ -37,7 +39,7 @@ vsmart.qcow2:
 	@wget ftp://$(HOST)/builds/bamboo/$(RELEASE)/$(BUILD)/viptela-smart-$(MACHINE).qcow2 -O $@
 
 vmanage.qcow2:
-	@wget ftp://$(HOST)/builds/bamboo/nms/$(RELEASE)/LATEST/viptela-vmanage-$(MACHINE).qcow2 -O $@
+	@wget ftp://$(HOST)/builds/bamboo/nms/$(VMRELEASE)/$(VMBUILD)/viptela-vmanage-$(MACHINE).qcow2 -O $@
 
 ca.crt ca.key:
 	@openssl req -new -x509 -nodes -keyout ca.key -out ca.crt -subj "$(SUBJECT)/CN=ca" 2>/dev/null
