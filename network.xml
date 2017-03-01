@@ -1183,7 +1183,7 @@
 
   <network>
     <name>gold</name>
-    <forward mode='nat'/>
+    <forward mode='route'/>
     <ip address='10.1.1.254' netmask='255.255.255.0'/>
     <domain name='acme.local' localOnly='yes'/>
     <dns>
@@ -1198,7 +1198,7 @@
 
   <network>
     <name>silver</name>
-    <forward mode='nat'/>
+    <forward mode='route'/>
     <ip address='10.1.2.254' netmask='255.255.255.0'/>
     <domain name='acme.local' localOnly='yes'/>
     <dns>
