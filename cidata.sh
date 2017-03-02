@@ -111,11 +111,6 @@ EOF
 case $host in
     vm*)
 	cat >> $out/user-data <<EOF
-  - mkfs.ext3 /dev/vdb
-  - mkdir -p /opt/data
-  - mount /dev/vdb /opt/data
-  - chown vmanage:vmanage-admin /opt/data
-  - confd_cmd -o -c 'set /nms-server/running true'
   - cp /home/root/root-ca.crt /usr/share/viptela/vmanage_root.crt
   - keytool -importcert -trustcacerts -file /home/root/root-ca.crt -keystore /usr/lib/cacerts -storepass changeit -alias acme -noprompt
 EOF
