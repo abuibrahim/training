@@ -109,6 +109,14 @@ runcmd:
 EOF
 
 case $host in
+    vb*)
+	cat >> $out/user-data <<EOF
+  - cp /home/root/server.crt /usr/share/viptela/server.crt
+EOF
+	;;
+esac
+
+case $host in
     vm*)
 	cat >> $out/user-data <<EOF
   - cp /home/root/root-ca.crt /usr/share/viptela/vmanage_root.crt
