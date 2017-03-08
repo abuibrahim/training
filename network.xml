@@ -42,7 +42,7 @@
         <model type='virtio'/>
       </interface>
       <interface type='network'>
-        <source network='branch'/>
+        <source network='branch-1'/>
         <model type='virtio'/>
       </interface>
       <serial type='pty'>
@@ -96,7 +96,7 @@
         <model type='virtio'/>
       </interface>
       <interface type='network'>
-        <source network='branch'/>
+        <source network='branch-2'/>
         <model type='virtio'/>
       </interface>
       <serial type='pty'>
@@ -150,7 +150,7 @@
         <model type='virtio'/>
       </interface>
       <interface type='network'>
-        <source network='branch'/>
+        <source network='branch-3'/>
         <model type='virtio'/>
       </interface>
       <serial type='pty'>
@@ -204,7 +204,7 @@
         <model type='virtio'/>
       </interface>
       <interface type='network'>
-        <source network='branch'/>
+        <source network='branch-4'/>
         <model type='virtio'/>
       </interface>
       <serial type='pty'>
@@ -258,7 +258,7 @@
         <model type='virtio'/>
       </interface>
       <interface type='network'>
-        <source network='dc1'/>
+        <source network='dc1-5'/>
         <model type='virtio'/>
       </interface>
       <serial type='pty'>
@@ -312,7 +312,7 @@
         <model type='virtio'/>
       </interface>
       <interface type='network'>
-        <source network='dc1'/>
+        <source network='dc1-6'/>
         <model type='virtio'/>
       </interface>
       <serial type='pty'>
@@ -366,7 +366,7 @@
         <model type='virtio'/>
       </interface>
       <interface type='network'>
-        <source network='dc2'/>
+        <source network='dc2-7'/>
         <model type='virtio'/>
       </interface>
       <serial type='pty'>
@@ -420,7 +420,165 @@
         <model type='virtio'/>
       </interface>
       <interface type='network'>
-        <source network='dc2'/>
+        <source network='dc2-8'/>
+        <model type='virtio'/>
+      </interface>
+      <serial type='pty'>
+        <target port='0'/>
+      </serial>
+      <console type='pty'>
+        <target type='serial' port='0'/>
+      </console>
+    </devices>
+  </domain>
+
+  <domain type='kvm'>
+    <name>ve19</name>
+    <memory unit='MiB'>1024</memory>
+    <vcpu placement='static'>1</vcpu>
+    <cpu mode='host-passthrough'/>
+    <os>
+      <type arch='x86_64'>hvm</type>
+      <boot dev='hd'/>
+    </os>
+    <features>
+      <acpi/>
+      <apic/>
+    </features>
+    <devices>
+      <disk type='file' device='disk'>
+        <driver name='qemu' type='qcow2'/>
+        <source file='/var/lib/libvirt/training/ve19.qcow2'/>
+        <target dev='vda' bus='virtio'/>
+      </disk>
+      <disk type='file' device='cdrom'>
+        <driver name='qemu' type='raw'/>
+        <source file='/var/lib/libvirt/training/ve19.iso'/>
+        <target dev='hdc' bus='ide'/>
+      </disk>
+      <controller type='pci' index='0' model='pci-root'/>
+      <controller type='virtio-serial' index='0'/>
+      <rng model='virtio'>
+        <backend model='random'>/dev/random</backend>
+      </rng>
+      <interface type='network'>
+        <source network='mgmt'/>
+        <model type='virtio'/>
+      </interface>
+      <interface type='network'>
+        <source network='branch-1'/>
+        <model type='virtio'/>
+      </interface>
+      <interface type='network'>
+        <source network='branch-2'/>
+        <model type='virtio'/>
+      </interface>
+      <interface type='network'>
+        <source network='branch-3'/>
+        <model type='virtio'/>
+      </interface>
+      <interface type='network'>
+        <source network='branch-4'/>
+        <model type='virtio'/>
+      </interface>
+      <serial type='pty'>
+        <target port='0'/>
+      </serial>
+      <console type='pty'>
+        <target type='serial' port='0'/>
+      </console>
+    </devices>
+  </domain>
+
+  <domain type='kvm'>
+    <name>ve20</name>
+    <memory unit='MiB'>1024</memory>
+    <vcpu placement='static'>1</vcpu>
+    <cpu mode='host-passthrough'/>
+    <os>
+      <type arch='x86_64'>hvm</type>
+      <boot dev='hd'/>
+    </os>
+    <features>
+      <acpi/>
+      <apic/>
+    </features>
+    <devices>
+      <disk type='file' device='disk'>
+        <driver name='qemu' type='qcow2'/>
+        <source file='/var/lib/libvirt/training/ve20.qcow2'/>
+        <target dev='vda' bus='virtio'/>
+      </disk>
+      <disk type='file' device='cdrom'>
+        <driver name='qemu' type='raw'/>
+        <source file='/var/lib/libvirt/training/ve20.iso'/>
+        <target dev='hdc' bus='ide'/>
+      </disk>
+      <controller type='pci' index='0' model='pci-root'/>
+      <controller type='virtio-serial' index='0'/>
+      <rng model='virtio'>
+        <backend model='random'>/dev/random</backend>
+      </rng>
+      <interface type='network'>
+        <source network='mgmt'/>
+        <model type='virtio'/>
+      </interface>
+      <interface type='network'>
+        <source network='dc1-5'/>
+        <model type='virtio'/>
+      </interface>
+      <interface type='network'>
+        <source network='dc1-6'/>
+        <model type='virtio'/>
+      </interface>
+      <serial type='pty'>
+        <target port='0'/>
+      </serial>
+      <console type='pty'>
+        <target type='serial' port='0'/>
+      </console>
+    </devices>
+  </domain>
+
+  <domain type='kvm'>
+    <name>ve21</name>
+    <memory unit='MiB'>1024</memory>
+    <vcpu placement='static'>1</vcpu>
+    <cpu mode='host-passthrough'/>
+    <os>
+      <type arch='x86_64'>hvm</type>
+      <boot dev='hd'/>
+    </os>
+    <features>
+      <acpi/>
+      <apic/>
+    </features>
+    <devices>
+      <disk type='file' device='disk'>
+        <driver name='qemu' type='qcow2'/>
+        <source file='/var/lib/libvirt/training/ve21.qcow2'/>
+        <target dev='vda' bus='virtio'/>
+      </disk>
+      <disk type='file' device='cdrom'>
+        <driver name='qemu' type='raw'/>
+        <source file='/var/lib/libvirt/training/ve21.iso'/>
+        <target dev='hdc' bus='ide'/>
+      </disk>
+      <controller type='pci' index='0' model='pci-root'/>
+      <controller type='virtio-serial' index='0'/>
+      <rng model='virtio'>
+        <backend model='random'>/dev/random</backend>
+      </rng>
+      <interface type='network'>
+        <source network='mgmt'/>
+        <model type='virtio'/>
+      </interface>
+      <interface type='network'>
+        <source network='dc2-7'/>
+        <model type='virtio'/>
+      </interface>
+      <interface type='network'>
+        <source network='dc2-8'/>
         <model type='virtio'/>
       </interface>
       <serial type='pty'>
@@ -846,6 +1004,42 @@
   </volume>
 
   <volume type='file' pool='training'>
+    <name>ve19.iso</name>
+    <capacity unit='bytes'>1</capacity>
+    <source>
+      <path>ve19.iso</path>
+    </source>
+    <target>
+      <path>/var/lib/libvirt/training/ve19.iso</path>
+      <format type='raw'/>
+    </target>
+  </volume>
+
+  <volume type='file' pool='training'>
+    <name>ve20.iso</name>
+    <capacity unit='bytes'>1</capacity>
+    <source>
+      <path>ve20.iso</path>
+    </source>
+    <target>
+      <path>/var/lib/libvirt/training/ve20.iso</path>
+      <format type='raw'/>
+    </target>
+  </volume>
+
+  <volume type='file' pool='training'>
+    <name>ve21.iso</name>
+    <capacity unit='bytes'>1</capacity>
+    <source>
+      <path>ve21.iso</path>
+    </source>
+    <target>
+      <path>/var/lib/libvirt/training/ve21.iso</path>
+      <format type='raw'/>
+    </target>
+  </volume>
+
+  <volume type='file' pool='training'>
     <name>vb1.iso</name>
     <capacity unit='bytes'>1</capacity>
     <source>
@@ -1054,6 +1248,57 @@
   </volume>
 
   <volume type='file' pool='training'>
+    <name>ve19.qcow2</name>
+    <capacity unit='bytes'>0</capacity>
+    <target>
+      <path>/var/lib/libvirt/training/ve19.qcow2</path>
+      <format type='qcow2'/>
+      <compat>1.1</compat>
+      <features>
+        <lazy_refcounts/>
+      </features>
+    </target>
+    <backingStore>
+      <path>/var/lib/libvirt/training/vedge.qcow2</path>
+      <format type='qcow2'/>
+    </backingStore>
+  </volume>
+
+  <volume type='file' pool='training'>
+    <name>ve20.qcow2</name>
+    <capacity unit='bytes'>0</capacity>
+    <target>
+      <path>/var/lib/libvirt/training/ve20.qcow2</path>
+      <format type='qcow2'/>
+      <compat>1.1</compat>
+      <features>
+        <lazy_refcounts/>
+      </features>
+    </target>
+    <backingStore>
+      <path>/var/lib/libvirt/training/vedge.qcow2</path>
+      <format type='qcow2'/>
+    </backingStore>
+  </volume>
+
+  <volume type='file' pool='training'>
+    <name>ve21.qcow2</name>
+    <capacity unit='bytes'>0</capacity>
+    <target>
+      <path>/var/lib/libvirt/training/ve21.qcow2</path>
+      <format type='qcow2'/>
+      <compat>1.1</compat>
+      <features>
+        <lazy_refcounts/>
+      </features>
+    </target>
+    <backingStore>
+      <path>/var/lib/libvirt/training/vedge.qcow2</path>
+      <format type='qcow2'/>
+    </backingStore>
+  </volume>
+
+  <volume type='file' pool='training'>
     <name>vb1.qcow2</name>
     <capacity unit='bytes'>0</capacity>
     <target>
@@ -1235,15 +1480,43 @@
   </network>
 
   <network>
-    <name>branch</name>
+    <bridge name='branch1-LAN'/>
+    <name>branch-1</name>
   </network>
 
   <network>
-    <name>dc1</name>
+    <bridge name='branch2-LAN'/>
+    <name>branch-2</name>
   </network>
 
   <network>
-    <name>dc2</name>
+    <bridge name='branch3-LAN'/>
+    <name>branch-3</name>
+  </network>
+
+  <network>
+    <bridge name='branch4-LAN'/>
+    <name>branch-4</name>
+  </network>
+
+  <network>
+    <bridge name='DC1-5-LAN'/>
+    <name>dc1-5</name>
+  </network>
+
+  <network>
+    <bridge name='DC1-6-LAN'/>
+    <name>dc1-6</name>
+  </network>
+
+  <network>
+    <bridge name='DC2-7-LAN'/>
+    <name>dc2-7</name>
+  </network>
+
+  <network>
+    <bridge name='DC-2-8-LAN'/>
+    <name>dc2-8</name>
   </network>
 
 </testbed>
