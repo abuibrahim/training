@@ -1,0 +1,14 @@
+instance-id: video1
+local-hostname: video1
+network-interfaces: |
+  auto ens2
+  iface ens2 inet static
+  address 10.1.0.50
+  netmask 255.255.255.0
+  dns-nameservers 8.8.8.8
+
+  auto ens3
+  iface ens3 inet static
+  address 10.1.200.50
+  netmask 255.255.255.0
+  gateway 10.1.200.19
