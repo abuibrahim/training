@@ -1,10 +1,8 @@
 HOST    ?= ftp.eng.viptela.com
 RELEASE ?= next
-#BUILD   ?= LATEST
-BUILD   ?= 3973
+BUILD   ?= 4050
 VMRELEASE ?= $(RELEASE)
-#VMBUILD ?= LATEST
-VMBUILD ?= 2824
+VMBUILD ?= 2901
 MACHINE ?= genericx86-64
 IMAGES   = vedge.qcow2 vsmart.qcow2 vmanage.qcow2 video.qcow2
 CONFS   := $(wildcard *.conf)
