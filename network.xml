@@ -5,6 +5,11 @@
     <memory unit='MiB'>1024</memory>
     <vcpu placement='static'>1</vcpu>
     <cpu mode='host-passthrough'/>
+    <memoryBacking>
+      <hugepages>
+	<page size='1' unit='G'/>
+      </hugepages>
+    </memoryBacking>
     <os>
       <type arch='x86_64'>hvm</type>
       <boot dev='hd'/>
@@ -59,6 +64,11 @@
     <memory unit='MiB'>1024</memory>
     <vcpu placement='static'>1</vcpu>
     <cpu mode='host-passthrough'/>
+    <memoryBacking>
+      <hugepages>
+	<page size='1' unit='G'/>
+      </hugepages>
+    </memoryBacking>
     <os>
       <type arch='x86_64'>hvm</type>
       <boot dev='hd'/>
@@ -113,6 +123,11 @@
     <memory unit='MiB'>1024</memory>
     <vcpu placement='static'>1</vcpu>
     <cpu mode='host-passthrough'/>
+    <memoryBacking>
+      <hugepages>
+	<page size='1' unit='G'/>
+      </hugepages>
+    </memoryBacking>
     <os>
       <type arch='x86_64'>hvm</type>
       <boot dev='hd'/>
@@ -167,6 +182,11 @@
     <memory unit='MiB'>1024</memory>
     <vcpu placement='static'>1</vcpu>
     <cpu mode='host-passthrough'/>
+    <memoryBacking>
+      <hugepages>
+	<page size='1' unit='G'/>
+      </hugepages>
+    </memoryBacking>
     <os>
       <type arch='x86_64'>hvm</type>
       <boot dev='hd'/>
@@ -221,6 +241,11 @@
     <memory unit='MiB'>1024</memory>
     <vcpu placement='static'>1</vcpu>
     <cpu mode='host-passthrough'/>
+    <memoryBacking>
+      <hugepages>
+	<page size='1' unit='G'/>
+      </hugepages>
+    </memoryBacking>
     <os>
       <type arch='x86_64'>hvm</type>
       <boot dev='hd'/>
@@ -275,6 +300,11 @@
     <memory unit='MiB'>1024</memory>
     <vcpu placement='static'>1</vcpu>
     <cpu mode='host-passthrough'/>
+    <memoryBacking>
+      <hugepages>
+	<page size='1' unit='G'/>
+      </hugepages>
+    </memoryBacking>
     <os>
       <type arch='x86_64'>hvm</type>
       <boot dev='hd'/>
@@ -329,6 +359,11 @@
     <memory unit='MiB'>1024</memory>
     <vcpu placement='static'>1</vcpu>
     <cpu mode='host-passthrough'/>
+    <memoryBacking>
+      <hugepages>
+	<page size='1' unit='G'/>
+      </hugepages>
+    </memoryBacking>
     <os>
       <type arch='x86_64'>hvm</type>
       <boot dev='hd'/>
@@ -383,6 +418,11 @@
     <memory unit='MiB'>1024</memory>
     <vcpu placement='static'>1</vcpu>
     <cpu mode='host-passthrough'/>
+    <memoryBacking>
+      <hugepages>
+	<page size='1' unit='G'/>
+      </hugepages>
+    </memoryBacking>
     <os>
       <type arch='x86_64'>hvm</type>
       <boot dev='hd'/>
@@ -437,6 +477,11 @@
     <memory unit='MiB'>1024</memory>
     <vcpu placement='static'>1</vcpu>
     <cpu mode='host-passthrough'/>
+    <memoryBacking>
+      <hugepages>
+	<page size='1' unit='G'/>
+      </hugepages>
+    </memoryBacking>
     <os>
       <type arch='x86_64'>hvm</type>
       <boot dev='hd'/>
@@ -499,6 +544,11 @@
     <memory unit='MiB'>1024</memory>
     <vcpu placement='static'>1</vcpu>
     <cpu mode='host-passthrough'/>
+    <memoryBacking>
+      <hugepages>
+	<page size='1' unit='G'/>
+      </hugepages>
+    </memoryBacking>
     <os>
       <type arch='x86_64'>hvm</type>
       <boot dev='hd'/>
@@ -549,6 +599,11 @@
     <memory unit='MiB'>1024</memory>
     <vcpu placement='static'>1</vcpu>
     <cpu mode='host-passthrough'/>
+    <memoryBacking>
+      <hugepages>
+	<page size='1' unit='G'/>
+      </hugepages>
+    </memoryBacking>
     <os>
       <type arch='x86_64'>hvm</type>
       <boot dev='hd'/>
@@ -599,6 +654,11 @@
     <memory unit='MiB'>1024</memory>
     <vcpu placement='static'>1</vcpu>
     <cpu mode='host-passthrough'/>
+    <memoryBacking>
+      <hugepages>
+	<page size='1' unit='G'/>
+      </hugepages>
+    </memoryBacking>
     <os>
       <type arch='x86_64'>hvm</type>
       <boot dev='hd'/>
@@ -661,6 +721,11 @@
     <memory unit='MiB'>1024</memory>
     <vcpu placement='static'>1</vcpu>
     <cpu mode='host-passthrough'/>
+    <memoryBacking>
+      <hugepages>
+	<page size='1' unit='G'/>
+      </hugepages>
+    </memoryBacking>
     <os>
       <type arch='x86_64'>hvm</type>
       <boot dev='hd'/>
@@ -707,6 +772,11 @@
     <memory unit='MiB'>1024</memory>
     <vcpu placement='static'>1</vcpu>
     <cpu mode='host-passthrough'/>
+    <memoryBacking>
+      <hugepages>
+	<page size='1' unit='G'/>
+      </hugepages>
+    </memoryBacking>
     <os>
       <type arch='x86_64'>hvm</type>
       <boot dev='hd'/>
@@ -753,6 +823,11 @@
     <memory unit='MiB'>1024</memory>
     <vcpu placement='static'>1</vcpu>
     <cpu mode='host-passthrough'/>
+    <memoryBacking>
+      <hugepages>
+	<page size='1' unit='G'/>
+      </hugepages>
+    </memoryBacking>
     <os>
       <type arch='x86_64'>hvm</type>
       <boot dev='hd'/>
@@ -799,6 +874,11 @@
     <memory unit='MiB'>1024</memory>
     <vcpu placement='static'>1</vcpu>
     <cpu mode='host-passthrough'/>
+    <memoryBacking>
+      <hugepages>
+	<page size='1' unit='G'/>
+      </hugepages>
+    </memoryBacking>
     <os>
       <type arch='x86_64'>hvm</type>
       <boot dev='hd'/>
@@ -845,6 +925,11 @@
     <memory unit='MiB'>1024</memory>
     <vcpu placement='static'>1</vcpu>
     <cpu mode='host-passthrough'/>
+    <memoryBacking>
+      <hugepages>
+	<page size='1' unit='G'/>
+      </hugepages>
+    </memoryBacking>
     <os>
       <type arch='x86_64'>hvm</type>
       <boot dev='hd'/>
@@ -891,6 +976,11 @@
     <memory unit='MiB'>1024</memory>
     <vcpu placement='static'>1</vcpu>
     <cpu mode='host-passthrough'/>
+    <memoryBacking>
+      <hugepages>
+	<page size='1' unit='G'/>
+      </hugepages>
+    </memoryBacking>
     <os>
       <type arch='x86_64'>hvm</type>
       <boot dev='hd'/>
@@ -938,6 +1028,11 @@
     <memory unit='MiB'>8192</memory>
     <vcpu placement='static'>8</vcpu>
     <cpu mode='host-passthrough'/>
+    <memoryBacking>
+      <hugepages>
+	<page size='1' unit='G'/>
+      </hugepages>
+    </memoryBacking>
     <os>
       <type arch='x86_64'>hvm</type>
       <boot dev='hd'/>
