@@ -104,6 +104,7 @@ cat >> $out/user-data <<EOF
 
 runcmd:
   - export CONFD_IPC_ACCESS_FILE=/etc/confd/confd_ipc_secret
+  - confd_cmd -c 'mctrans;mset /system/organization-name Acme;mcommit;ccommit'
   - vconfd_script_upload_root_ca_crt_chain.sh path /home/root/root-ca.crt
   - vconfd_script_cert.sh path /home/root/server.crt
 EOF

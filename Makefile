@@ -1,8 +1,8 @@
 HOST    ?= ftp.eng.viptela.com
-RELEASE ?= next
-BUILD   ?= 4187
+RELEASE ?= 17.1
+BUILD   ?= 175
 VMRELEASE ?= $(RELEASE)
-VMBUILD ?= 3017
+VMBUILD ?= 164
 MACHINE ?= genericx86-64
 IMAGES   = vedge.qcow2 vsmart.qcow2 vmanage.qcow2 video.qcow2
 CONFS   := $(wildcard *.conf)
@@ -67,10 +67,10 @@ $(VSMARTS:.conf=.iso): vedge_serial_numbers
 	@uuidgen > $@
 
 vsmart_serial_numbers: $(VSMARTS:.conf=.srl) $(VMANAGES:.conf=.srl)
-	@for s in $^; do echo "`cat $$s`,valid"; done > $@
+	@for s in $^; do echo "`cat $$s`,valid,Acme"; done > $@
 
 vedge_serial_numbers: $(VEDGES:.conf=.srl) $(VEDGES:.conf=.uuid)
-	@for s in $(VEDGES:.conf=.srl); do echo "`cat $${s%.*}.uuid`,`cat $$s`,valid"; done > $@
+	@for s in $(VEDGES:.conf=.srl); do echo "`cat $${s%.*}.uuid`,`cat $$s`,valid,Acme"; done > $@
 
 video1.iso: video1-user-data video1-meta-data
 	@cp video1-user-data user-data
