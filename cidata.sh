@@ -115,19 +115,10 @@ case $host in
   - cp /home/root/server.crt /usr/share/viptela/server.crt
 EOF
 	;;
-esac
-
-case $host in
     vm*)
 	cat >> $out/user-data <<EOF
   - cp /home/root/root-ca.crt /usr/share/viptela/vmanage_root.crt
   - keytool -importcert -trustcacerts -file /home/root/root-ca.crt -keystore /usr/lib/cacerts -storepass changeit -alias acme -noprompt
-EOF
-	;;
-    *)
-	cat >> $out/user-data <<EOF
-  - reboot
-
 EOF
 	;;
 esac
