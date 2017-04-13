@@ -1702,6 +1702,7 @@
     <bridge name='virbr-mgmt'/>
     <forward mode='route'/>
     <name>mgmt</name>
+    <domain/>
     <ip address='10.1.0.254' netmask='255.255.255.0'>
       <dhcp>
         <range start='10.1.0.100' end='10.1.0.200'/>
