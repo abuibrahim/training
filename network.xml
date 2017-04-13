@@ -7,7 +7,7 @@
     <cpu mode='host-passthrough'/>
     <memoryBacking>
       <hugepages>
-	<page size='1' unit='G'/>
+        <page size='1' unit='G'/>
       </hugepages>
     </memoryBacking>
     <os>
@@ -66,7 +66,7 @@
     <cpu mode='host-passthrough'/>
     <memoryBacking>
       <hugepages>
-	<page size='1' unit='G'/>
+        <page size='1' unit='G'/>
       </hugepages>
     </memoryBacking>
     <os>
@@ -125,7 +125,7 @@
     <cpu mode='host-passthrough'/>
     <memoryBacking>
       <hugepages>
-	<page size='1' unit='G'/>
+        <page size='1' unit='G'/>
       </hugepages>
     </memoryBacking>
     <os>
@@ -184,7 +184,7 @@
     <cpu mode='host-passthrough'/>
     <memoryBacking>
       <hugepages>
-	<page size='1' unit='G'/>
+        <page size='1' unit='G'/>
       </hugepages>
     </memoryBacking>
     <os>
@@ -243,7 +243,7 @@
     <cpu mode='host-passthrough'/>
     <memoryBacking>
       <hugepages>
-	<page size='1' unit='G'/>
+        <page size='1' unit='G'/>
       </hugepages>
     </memoryBacking>
     <os>
@@ -302,7 +302,7 @@
     <cpu mode='host-passthrough'/>
     <memoryBacking>
       <hugepages>
-	<page size='1' unit='G'/>
+        <page size='1' unit='G'/>
       </hugepages>
     </memoryBacking>
     <os>
@@ -361,7 +361,7 @@
     <cpu mode='host-passthrough'/>
     <memoryBacking>
       <hugepages>
-	<page size='1' unit='G'/>
+        <page size='1' unit='G'/>
       </hugepages>
     </memoryBacking>
     <os>
@@ -420,7 +420,7 @@
     <cpu mode='host-passthrough'/>
     <memoryBacking>
       <hugepages>
-	<page size='1' unit='G'/>
+        <page size='1' unit='G'/>
       </hugepages>
     </memoryBacking>
     <os>
@@ -479,7 +479,7 @@
     <cpu mode='host-passthrough'/>
     <memoryBacking>
       <hugepages>
-	<page size='1' unit='G'/>
+        <page size='1' unit='G'/>
       </hugepages>
     </memoryBacking>
     <os>
@@ -546,7 +546,7 @@
     <cpu mode='host-passthrough'/>
     <memoryBacking>
       <hugepages>
-	<page size='1' unit='G'/>
+        <page size='1' unit='G'/>
       </hugepages>
     </memoryBacking>
     <os>
@@ -601,7 +601,7 @@
     <cpu mode='host-passthrough'/>
     <memoryBacking>
       <hugepages>
-	<page size='1' unit='G'/>
+        <page size='1' unit='G'/>
       </hugepages>
     </memoryBacking>
     <os>
@@ -656,7 +656,7 @@
     <cpu mode='host-passthrough'/>
     <memoryBacking>
       <hugepages>
-	<page size='1' unit='G'/>
+        <page size='1' unit='G'/>
       </hugepages>
     </memoryBacking>
     <os>
@@ -723,7 +723,7 @@
     <cpu mode='host-passthrough'/>
     <memoryBacking>
       <hugepages>
-	<page size='1' unit='G'/>
+        <page size='1' unit='G'/>
       </hugepages>
     </memoryBacking>
     <os>
@@ -774,7 +774,7 @@
     <cpu mode='host-passthrough'/>
     <memoryBacking>
       <hugepages>
-	<page size='1' unit='G'/>
+        <page size='1' unit='G'/>
       </hugepages>
     </memoryBacking>
     <os>
@@ -825,7 +825,7 @@
     <cpu mode='host-passthrough'/>
     <memoryBacking>
       <hugepages>
-	<page size='1' unit='G'/>
+        <page size='1' unit='G'/>
       </hugepages>
     </memoryBacking>
     <os>
@@ -876,7 +876,7 @@
     <cpu mode='host-passthrough'/>
     <memoryBacking>
       <hugepages>
-	<page size='1' unit='G'/>
+        <page size='1' unit='G'/>
       </hugepages>
     </memoryBacking>
     <os>
@@ -927,7 +927,7 @@
     <cpu mode='host-passthrough'/>
     <memoryBacking>
       <hugepages>
-	<page size='1' unit='G'/>
+        <page size='1' unit='G'/>
       </hugepages>
     </memoryBacking>
     <os>
@@ -978,7 +978,7 @@
     <cpu mode='host-passthrough'/>
     <memoryBacking>
       <hugepages>
-	<page size='1' unit='G'/>
+        <page size='1' unit='G'/>
       </hugepages>
     </memoryBacking>
     <os>
@@ -1011,7 +1011,7 @@
       </interface>
       <interface type='network'>
         <source network='video'/>
-	<mac address='52:54:00:de:ad:50'/>
+        <mac address='52:54:00:de:ad:50'/>
         <model type='virtio'/>
       </interface>
       <serial type='pty'>
@@ -1030,7 +1030,7 @@
     <cpu mode='host-passthrough'/>
     <memoryBacking>
       <hugepages>
-	<page size='1' unit='G'/>
+        <page size='1' unit='G'/>
       </hugepages>
     </memoryBacking>
     <os>
@@ -1704,7 +1704,7 @@
     <name>mgmt</name>
     <ip address='10.1.0.254' netmask='255.255.255.0'>
       <dhcp>
-	<range start='10.1.0.100' end='10.1.0.200'/>
+        <range start='10.1.0.100' end='10.1.0.200'/>
       </dhcp>
     </ip>
   </network>
@@ -1717,10 +1717,10 @@
     <domain name='acme.local' localOnly='yes'/>
     <dns>
       <host ip='10.1.1.9'>
-	<hostname>vb.acme.local</hostname>
+        <hostname>vb.acme.local</hostname>
       </host>
       <host ip='10.1.2.10'>
-	<hostname>vb.acme.local</hostname>
+        <hostname>vb.acme.local</hostname>
       </host>
     </dns>
   </network>
@@ -1733,10 +1733,10 @@
     <domain name='acme.local' localOnly='yes'/>
     <dns>
       <host ip='10.1.1.9'>
-	<hostname>vb.acme.local</hostname>
+        <hostname>vb.acme.local</hostname>
       </host>
       <host ip='10.1.2.10'>
-	<hostname>vb.acme.local</hostname>
+        <hostname>vb.acme.local</hostname>
       </host>
     </dns>
   </network>
@@ -1749,10 +1749,10 @@
     <domain name='acme.local' localOnly='yes'/>
     <dns>
       <host ip='10.1.1.9'>
-	<hostname>vb.acme.local</hostname>
+        <hostname>vb.acme.local</hostname>
       </host>
       <host ip='10.1.2.10'>
-	<hostname>vb.acme.local</hostname>
+        <hostname>vb.acme.local</hostname>
       </host>
     </dns>
   </network>
