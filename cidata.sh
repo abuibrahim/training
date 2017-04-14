@@ -41,6 +41,8 @@ ssh_authorized_keys:
 - $(cat ~/.ssh/id_rsa.pub)
 
 write_files:
+- path: /etc/viptela/sig_override
+
 - path: /home/root/root-ca.crt
   content: |
 EOF
