@@ -1,8 +1,5 @@
 HOST    ?= ftp.eng.viptela.com
-RELEASE ?= 17.1
-BUILD   ?= 202
-VMRELEASE ?= $(RELEASE)
-VMBUILD ?= 197
+RELEASE ?= 17.1.0
 MACHINE ?= genericx86-64
 IMAGES   = vedge.qcow2 vsmart.qcow2 vmanage.qcow2 video.qcow2
 CONFS   := $(wildcard *.conf)
@@ -33,13 +30,13 @@ all: .done
 	@touch .done
 
 vedge.qcow2:
-	@wget ftp://$(HOST)/builds/bamboo/$(RELEASE)/$(BUILD)/viptela-edge-$(MACHINE).qcow2 -O $@
+	@wget ftp://$(HOST)/builds/release/$(RELEASE)/platform/viptela-edge-$(MACHINE).qcow2 -O $@
 
 vsmart.qcow2:
-	@wget ftp://$(HOST)/builds/bamboo/$(RELEASE)/$(BUILD)/viptela-smart-$(MACHINE).qcow2 -O $@
+	@wget ftp://$(HOST)/builds/release/$(RELEASE)/platform/viptela-smart-$(MACHINE).qcow2 -O $@
 
 vmanage.qcow2:
-	@wget ftp://$(HOST)/builds/bamboo/nms/$(VMRELEASE)/$(VMBUILD)/viptela-vmanage-$(MACHINE).qcow2 -O $@
+	@wget ftp://$(HOST)/builds/release/$(RELEASE)/vmanage/viptela-vmanage-$(MACHINE).qcow2 -O $@
 
 video.qcow2:
 	@wget ftp://$(HOST)/ruslan/video.qcow2 -O $@
