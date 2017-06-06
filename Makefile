@@ -1,5 +1,5 @@
 HOST    ?= ftp.eng.viptela.com
-RELEASE ?= 17.1.0
+RELEASE ?= 17.1.1
 MACHINE ?= genericx86-64
 IMAGES   = vedge.qcow2 vsmart.qcow2 vmanage.qcow2 video.qcow2
 CONFS   := $(wildcard *.conf)
