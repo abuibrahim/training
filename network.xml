@@ -3,7 +3,7 @@
   <domain type='kvm'>
     <name>ve1</name>
     <memory unit='MiB'>1024</memory>
-    <vcpu placement='static'>1</vcpu>
+    <vcpu>1</vcpu>
     <cpu mode='host-passthrough'/>
     <memoryBacking>
       <hugepages>
@@ -62,7 +62,7 @@
   <domain type='kvm'>
     <name>ve2</name>
     <memory unit='MiB'>1024</memory>
-    <vcpu placement='static'>1</vcpu>
+    <vcpu>1</vcpu>
     <cpu mode='host-passthrough'/>
     <memoryBacking>
       <hugepages>
@@ -121,7 +121,7 @@
   <domain type='kvm'>
     <name>ve3</name>
     <memory unit='MiB'>1024</memory>
-    <vcpu placement='static'>1</vcpu>
+    <vcpu>1</vcpu>
     <cpu mode='host-passthrough'/>
     <memoryBacking>
       <hugepages>
@@ -180,7 +180,7 @@
   <domain type='kvm'>
     <name>ve4</name>
     <memory unit='MiB'>1024</memory>
-    <vcpu placement='static'>1</vcpu>
+    <vcpu>1</vcpu>
     <cpu mode='host-passthrough'/>
     <memoryBacking>
       <hugepages>
@@ -239,7 +239,7 @@
   <domain type='kvm'>
     <name>ve5</name>
     <memory unit='MiB'>1024</memory>
-    <vcpu placement='static'>1</vcpu>
+    <vcpu>1</vcpu>
     <cpu mode='host-passthrough'/>
     <memoryBacking>
       <hugepages>
@@ -298,7 +298,7 @@
   <domain type='kvm'>
     <name>ve6</name>
     <memory unit='MiB'>1024</memory>
-    <vcpu placement='static'>1</vcpu>
+    <vcpu>1</vcpu>
     <cpu mode='host-passthrough'/>
     <memoryBacking>
       <hugepages>
@@ -357,7 +357,7 @@
   <domain type='kvm'>
     <name>ve7</name>
     <memory unit='MiB'>1024</memory>
-    <vcpu placement='static'>1</vcpu>
+    <vcpu>1</vcpu>
     <cpu mode='host-passthrough'/>
     <memoryBacking>
       <hugepages>
@@ -416,7 +416,7 @@
   <domain type='kvm'>
     <name>ve8</name>
     <memory unit='MiB'>1024</memory>
-    <vcpu placement='static'>1</vcpu>
+    <vcpu>1</vcpu>
     <cpu mode='host-passthrough'/>
     <memoryBacking>
       <hugepages>
@@ -475,7 +475,7 @@
   <domain type='kvm'>
     <name>ve19</name>
     <memory unit='MiB'>1024</memory>
-    <vcpu placement='static'>1</vcpu>
+    <vcpu>1</vcpu>
     <cpu mode='host-passthrough'/>
     <memoryBacking>
       <hugepages>
@@ -526,10 +526,6 @@
         <source network='branch-4'/>
         <model type='virtio'/>
       </interface>
-      <interface type='network'>
-        <source network='video'/>
-        <model type='virtio'/>
-      </interface>
       <serial type='pty'>
         <target port='0'/>
       </serial>
@@ -542,7 +538,7 @@
   <domain type='kvm'>
     <name>ve20</name>
     <memory unit='MiB'>1024</memory>
-    <vcpu placement='static'>1</vcpu>
+    <vcpu>1</vcpu>
     <cpu mode='host-passthrough'/>
     <memoryBacking>
       <hugepages>
@@ -597,7 +593,7 @@
   <domain type='kvm'>
     <name>ve21</name>
     <memory unit='MiB'>1024</memory>
-    <vcpu placement='static'>1</vcpu>
+    <vcpu>1</vcpu>
     <cpu mode='host-passthrough'/>
     <memoryBacking>
       <hugepages>
@@ -650,76 +646,9 @@
   </domain>
 
   <domain type='kvm'>
-    <name>ve22</name>
-    <memory unit='MiB'>1024</memory>
-    <vcpu placement='static'>1</vcpu>
-    <cpu mode='host-passthrough'/>
-    <memoryBacking>
-      <hugepages>
-        <page size='1' unit='G'/>
-      </hugepages>
-    </memoryBacking>
-    <os>
-      <type arch='x86_64'>hvm</type>
-      <boot dev='hd'/>
-    </os>
-    <features>
-      <acpi/>
-      <apic/>
-    </features>
-    <devices>
-      <disk type='file' device='disk'>
-        <driver name='qemu' type='qcow2'/>
-        <source file='/var/lib/libvirt/training/ve22.qcow2'/>
-        <target dev='vda' bus='virtio'/>
-      </disk>
-      <disk type='file' device='cdrom'>
-        <driver name='qemu' type='raw'/>
-        <source file='/var/lib/libvirt/training/ve22.iso'/>
-        <target dev='hdc' bus='ide'/>
-      </disk>
-      <controller type='pci' index='0' model='pci-root'/>
-      <controller type='virtio-serial' index='0'/>
-      <rng model='virtio'>
-        <backend model='random'>/dev/random</backend>
-      </rng>
-      <interface type='network'>
-        <source network='mgmt'/>
-        <model type='virtio'/>
-      </interface>
-      <interface type='network'>
-        <source network='internet'/>
-        <model type='virtio'/>
-      </interface>
-      <interface type='network'>
-        <source network='dc1-5'/>
-        <model type='virtio'/>
-      </interface>
-      <interface type='network'>
-        <source network='dc1-6'/>
-        <model type='virtio'/>
-      </interface>
-      <interface type='network'>
-        <source network='dc2-7'/>
-        <model type='virtio'/>
-      </interface>
-      <interface type='network'>
-        <source network='dc2-8'/>
-        <model type='virtio'/>
-      </interface>
-      <serial type='pty'>
-        <target port='0'/>
-      </serial>
-      <console type='pty'>
-        <target type='serial' port='0'/>
-      </console>
-    </devices>
-  </domain>
-
-  <domain type='kvm'>
     <name>vb1</name>
     <memory unit='MiB'>1024</memory>
-    <vcpu placement='static'>1</vcpu>
+    <vcpu>1</vcpu>
     <cpu mode='host-passthrough'/>
     <memoryBacking>
       <hugepages>
@@ -770,7 +699,7 @@
   <domain type='kvm'>
     <name>vb2</name>
     <memory unit='MiB'>1024</memory>
-    <vcpu placement='static'>1</vcpu>
+    <vcpu>1</vcpu>
     <cpu mode='host-passthrough'/>
     <memoryBacking>
       <hugepages>
@@ -821,7 +750,7 @@
   <domain type='kvm'>
     <name>vs1</name>
     <memory unit='MiB'>1024</memory>
-    <vcpu placement='static'>1</vcpu>
+    <vcpu>1</vcpu>
     <cpu mode='host-passthrough'/>
     <memoryBacking>
       <hugepages>
@@ -872,7 +801,7 @@
   <domain type='kvm'>
     <name>vs2</name>
     <memory unit='MiB'>1024</memory>
-    <vcpu placement='static'>1</vcpu>
+    <vcpu>1</vcpu>
     <cpu mode='host-passthrough'/>
     <memoryBacking>
       <hugepages>
@@ -923,7 +852,7 @@
   <domain type='kvm'>
     <name>vs3</name>
     <memory unit='MiB'>1024</memory>
-    <vcpu placement='static'>1</vcpu>
+    <vcpu>1</vcpu>
     <cpu mode='host-passthrough'/>
     <memoryBacking>
       <hugepages>
@@ -972,61 +901,9 @@
   </domain>
 
   <domain type='kvm'>
-    <name>video1</name>
-    <memory unit='MiB'>1024</memory>
-    <vcpu placement='static'>1</vcpu>
-    <cpu mode='host-passthrough'/>
-    <memoryBacking>
-      <hugepages>
-        <page size='1' unit='G'/>
-      </hugepages>
-    </memoryBacking>
-    <os>
-      <type arch='x86_64'>hvm</type>
-      <boot dev='hd'/>
-    </os>
-    <features>
-      <acpi/>
-      <apic/>
-    </features>
-    <devices>
-      <disk type='file' device='disk'>
-        <driver name='qemu' type='qcow2'/>
-        <source file='/var/lib/libvirt/training/video1.qcow2'/>
-        <target dev='vda' bus='virtio'/>
-      </disk>
-      <disk type='file' device='cdrom'>
-        <driver name='qemu' type='raw'/>
-        <source file='/var/lib/libvirt/training/video1.iso'/>
-        <target dev='hdc' bus='ide'/>
-      </disk>
-      <controller type='pci' index='0' model='pci-root'/>
-      <controller type='virtio-serial' index='0'/>
-      <rng model='virtio'>
-        <backend model='random'>/dev/random</backend>
-      </rng>
-      <interface type='network'>
-        <source network='mgmt'/>
-        <model type='virtio'/>
-      </interface>
-      <interface type='network'>
-        <source network='video'/>
-        <mac address='52:54:00:de:ad:50'/>
-        <model type='virtio'/>
-      </interface>
-      <serial type='pty'>
-        <target port='0'/>
-      </serial>
-      <console type='pty'>
-        <target type='serial' port='0'/>
-      </console>
-    </devices>
-  </domain>
-
-  <domain type='kvm'>
     <name>vm</name>
     <memory unit='MiB'>8192</memory>
-    <vcpu placement='static'>8</vcpu>
+    <vcpu>4</vcpu>
     <cpu mode='host-passthrough'/>
     <memoryBacking>
       <hugepages>
@@ -1099,18 +976,6 @@
     </source>
     <target>
       <path>/var/lib/libvirt/training/vsmart.qcow2</path>
-      <format type='qcow2'/>
-    </target>
-  </volume>
-
-  <volume type='file' pool='training'>
-    <name>video.qcow2</name>
-    <capacity unit='bytes'>1</capacity>
-    <source>
-      <path>video.qcow2</path>
-    </source>
-    <target>
-      <path>/var/lib/libvirt/training/video.qcow2</path>
       <format type='qcow2'/>
     </target>
   </volume>
@@ -1260,18 +1125,6 @@
   </volume>
 
   <volume type='file' pool='training'>
-    <name>ve22.iso</name>
-    <capacity unit='bytes'>1</capacity>
-    <source>
-      <path>ve22.iso</path>
-    </source>
-    <target>
-      <path>/var/lib/libvirt/training/ve22.iso</path>
-      <format type='raw'/>
-    </target>
-  </volume>
-
-  <volume type='file' pool='training'>
     <name>vb1.iso</name>
     <capacity unit='bytes'>1</capacity>
     <source>
@@ -1327,18 +1180,6 @@
     </source>
     <target>
       <path>/var/lib/libvirt/training/vs3.iso</path>
-      <format type='raw'/>
-    </target>
-  </volume>
-
-  <volume type='file' pool='training'>
-    <name>video1.iso</name>
-    <capacity unit='bytes'>1</capacity>
-    <source>
-      <path>video1.iso</path>
-    </source>
-    <target>
-      <path>/var/lib/libvirt/training/video1.iso</path>
       <format type='raw'/>
     </target>
   </volume>
@@ -1543,23 +1384,6 @@
   </volume>
 
   <volume type='file' pool='training'>
-    <name>ve22.qcow2</name>
-    <capacity unit='bytes'>0</capacity>
-    <target>
-      <path>/var/lib/libvirt/training/ve22.qcow2</path>
-      <format type='qcow2'/>
-      <compat>1.1</compat>
-      <features>
-        <lazy_refcounts/>
-      </features>
-    </target>
-    <backingStore>
-      <path>/var/lib/libvirt/training/vedge.qcow2</path>
-      <format type='qcow2'/>
-    </backingStore>
-  </volume>
-
-  <volume type='file' pool='training'>
     <name>vb1.qcow2</name>
     <capacity unit='bytes'>0</capacity>
     <target>
@@ -1640,23 +1464,6 @@
     </target>
     <backingStore>
       <path>/var/lib/libvirt/training/vsmart.qcow2</path>
-      <format type='qcow2'/>
-    </backingStore>
-  </volume>
-
-  <volume type='file' pool='training'>
-    <name>video1.qcow2</name>
-    <capacity unit='bytes'>0</capacity>
-    <target>
-      <path>/var/lib/libvirt/training/video1.qcow2</path>
-      <format type='qcow2'/>
-      <compat>1.1</compat>
-      <features>
-        <lazy_refcounts/>
-      </features>
-    </target>
-    <backingStore>
-      <path>/var/lib/libvirt/training/video.qcow2</path>
       <format type='qcow2'/>
     </backingStore>
   </volume>
@@ -1756,10 +1563,6 @@
         <hostname>vb.acme.local</hostname>
       </host>
     </dns>
-  </network>
-
-  <network>
-    <name>video</name>
   </network>
 
   <network>

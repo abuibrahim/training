@@ -1,13 +1,13 @@
-HOST    ?= ftp.eng.viptela.com
+HOST    ?= https://s3-us-west-1.amazonaws.com/viptelasoftwaredownloads
 RELEASE ?= 17.1.1
 MACHINE ?= genericx86-64
-IMAGES   = vedge.qcow2 vsmart.qcow2 vmanage.qcow2 video.qcow2
+IMAGES   = vedge.qcow2 vsmart.qcow2 vmanage.qcow2
 CONFS   := $(wildcard *.conf)
 VEDGES  := $(wildcard ve*.conf)
 VSMARTS := $(wildcard vs*.conf)
 VBONDS  := $(wildcard vb*.conf)
 VMANAGES:= $(wildcard vm*.conf)
-ISOS    := $(CONFS:.conf=.iso) video1.iso
+ISOS    := $(CONFS:.conf=.iso)
 CRTS    := $(CONFS:.conf=.crt)
 CSRS    := $(CONFS:.conf=.csr)
 SRLS    := $(CONFS:.conf=.srl)
@@ -30,16 +30,13 @@ all: .done
 	@touch .done
 
 vedge.qcow2:
-	@wget ftp://$(HOST)/builds/release/$(RELEASE)/platform/viptela-edge-$(MACHINE).qcow2 -O $@
+	@wget $(HOST)/$(RELEASE)/viptela-edge-$(MACHINE).qcow2 -O $@
 
 vsmart.qcow2:
-	@wget ftp://$(HOST)/builds/release/$(RELEASE)/platform/viptela-smart-$(MACHINE).qcow2 -O $@
+	@wget $(HOST)/$(RELEASE)/viptela-smart-$(MACHINE).qcow2 -O $@
 
 vmanage.qcow2:
-	@wget ftp://$(HOST)/builds/release/$(RELEASE)/vmanage/viptela-vmanage-$(MACHINE).qcow2 -O $@
-
-video.qcow2:
-	@wget ftp://$(HOST)/ruslan/video.qcow2 -O $@
+	@wget $(HOST)/$(RELEASE)/viptela-vmanage-$(MACHINE).qcow2 -O $@
 
 ca.crt ca.key:
 	@openssl req -new -x509 -nodes -keyout ca.key -out ca.crt -subj "$(SUBJECT)/CN=ca" 2>/dev/null
@@ -68,13 +65,6 @@ vsmart_serial_numbers: $(VSMARTS:.conf=.srl) $(VMANAGES:.conf=.srl)
 
 vedge_serial_numbers: $(VEDGES:.conf=.srl) $(VEDGES:.conf=.uuid)
 	@for s in $(VEDGES:.conf=.srl); do echo "`cat $${s%.*}.uuid`,`cat $$s`,valid,Acme"; done > $@
-
-video1.iso: video1-user-data video1-meta-data
-	@cp video1-user-data user-data
-	@cp video1-meta-data meta-data
-	@echo "Generating $@"
-	@genisoimage -quiet -volid cidata -joliet -rock -output $@ user-data meta-data
-	@rm user-data meta-data
 
 clean:
 	@testbed destroy network.xml
