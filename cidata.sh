@@ -37,9 +37,16 @@ Content-Transfer-Encoding: 7bit
 Content-Disposition: attachment; filename="bootstrap"
 
 #cloud-config
+EOF
+
+if [ -r ~/.ssh/id_rsa.pub ]; then
+    cat >> $out/user-data <<EOF
 ssh_authorized_keys:
 - $(cat ~/.ssh/id_rsa.pub)
+EOF
+fi
 
+cat >> $out/user-data <<EOF
 write_files:
 - path: /etc/viptela/sig_override
 
